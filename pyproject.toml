@@ -6,16 +6,69 @@ build-backend = "setuptools.build_meta"
 name = "verbaterra"
 version = "0.1.0"
 description = "VerbaTerra Simulation Lab — cultural–linguistic simulation & analysis toolkit"
-authors = [{name="Harshit Gupta"}]
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
+authors = [{name = "Harshit Gupta"}]
 dependencies = [
   "numpy>=1.26",
   "pandas>=2.1",
   "scikit-learn>=1.4",
-  "matplotlib>=3.8",
-  "networkx>=3.2"
 ]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "pytest-cov>=4.1",
+  "ruff>=0.4.5",
+  "black>=24.4",
+  "mypy>=1.8",
+]
+docs = [
+  "mkdocs>=1.5",
+  "mkdocs-material>=9.5",
+]
+
+[project.urls]
+homepage = "https://github.com/VerbaTerraProject/verbaterra"
+documentation = "https://verbaterraproject.github.io/VerbaTerra-Master/"
+repository = "https://github.com/VerbaTerraProject/verbaterra"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+verbaterra = [
+  "engines/vsion/configs/*.yaml",
+  "data/samples/*.csv",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["verbaterra"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "W"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.mypy]
+python_version = "3.10"
+strict_optional = true
+ignore_missing_imports = true
+mypy_path = "src"
+
