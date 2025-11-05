@@ -1,8 +1,8 @@
-site_name: VerbaTerra — Simulation Lab Docs
-site_description: Cultural–linguistic simulation ecosystem (ICLHF • CALR • vSION • NΦRA • Analyst • Nexus)
+site_name: VerbaTerra Documentation
+site_description: Cultural–linguistic simulation ecosystem (vSION • ICLHF • NLIS • CRM)
 site_url: https://verbaterraproject.github.io/VerbaTerra-Master/
-repo_url: https://github.com/VerbaTerraProject/VerbaTerra-Master
-repo_name: VerbaTerra-Master
+repo_url: https://github.com/VerbaTerraProject/verbaterra
+repo_name: verbaterra
 theme:
   name: material
   features:
@@ -11,24 +11,19 @@ theme:
     - content.code.copy
 nav:
   - Home: index.md
-  - Overview: overview.md
-  - Methods:
-    - ICLHF: methods/iclhf.md
-    - CALR: methods/calr.md
-    - Metrics (NLIS & CRM): methods/metrics.md
-  - Engines:
-    - vSION Engine: engines/vsion.md
-    - NΦRA (NPHRA) Core: engines/nphra.md
-    - Analyst Module: engines/analyst.md
-    - Nexus Interface: engines/nexus.md
-  - Validation:
-    - Robustness & Directionality: validation/robustness_directionality.md
-  - Data & Reproducibility:
-    - Data Policy: data/data_policy.md
-    - Reproducibility: data/reproducibility.md
-  - API Reference: api/index.md
-  - Changelog: changelog.md
+  - Engines: engines.md
+  - Metrics: metrics.md
+  - Models: models.md
+  - Data: data.md
+  - Methodology:
+      - ICLHF: methodology/iclhf.md
+      - CALR: methodology/calr.md
+      - R-Type Framework: methodology/r_type_framework.md
+  - Labs:
+      - Civilization Lab V19: labs/civilization_lab_v19.md
+  - Papers:
+      - Overview: papers/index.md
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/VerbaTerraProject/VerbaTerra-Master
+      link: https://github.com/VerbaTerraProject/verbaterra
