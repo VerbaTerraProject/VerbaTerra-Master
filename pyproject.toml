@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "verbaterra"
-version = "0.1.0"
-description = "VerbaTerra Simulation Lab — cultural–linguistic simulation & analysis toolkit"
+version = "1.0.0"
+description = "VerbaTerra cultural–linguistic simulation and modelling toolkit"
 authors = [{name="Harshit Gupta"}]
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,7 +14,9 @@ dependencies = [
   "pandas>=2.1",
   "scikit-learn>=1.4",
   "matplotlib>=3.8",
-  "networkx>=3.2"
+  "networkx>=3.2",
+  "pyarrow>=15.0",
+  "PyYAML>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -23,6 +25,17 @@ docs = [
   "mkdocs>=1.5",
   "mkdocs-material>=9.5"
 ]
+all = [
+  "pytest>=7.4",
+  "mkdocs>=1.5",
+  "mkdocs-material>=9.5"
+]
+
+[project.scripts]
+vt-sim = "verbaterra.cli:vt_sim"
+vt-metrics = "verbaterra.cli:vt_metrics"
+vt-model-train = "verbaterra.cli_model:vt_model_train"
+vt-model-eval = "verbaterra.cli_model:vt_model_eval"
 
 [tool.setuptools.packages.find]
 where = ["src"]

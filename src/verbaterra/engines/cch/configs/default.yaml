@@ -1,0 +1,8 @@
+n: 180
+ritual_core: 60.0
+ritual_variance: 8.5
+hierarchy_center: 52.0
+hierarchy_variance: 10.5
+diffusion_rate: 0.18
+trade_base: 42.0
+symbolism_base: 57.0

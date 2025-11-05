@@ -1,12 +1,9 @@
-"""Public package exports for VerbaTerra."""
+"""VerbaTerra package public exports."""
 
-from .iclhf.model import ICLHFModel
-from .core.metrics import nlis, crm
-from .engines.vsion import simulate_block
+from __future__ import annotations
 
-__all__ = [
-    "ICLHFModel",
-    "nlis",
-    "crm",
-    "simulate_block",
-]
+__all__ = ["__version__", "engines", "metrics", "models"]
+
+__version__ = "1.0.0"
+
+from . import engines, metrics, models  # noqa: E402  (export convenience)

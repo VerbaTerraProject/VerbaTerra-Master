@@ -8,14 +8,18 @@ _SRC = _ROOT / "src"
 if _SRC.exists():
     sys.path.insert(0, str(_SRC))
 
-from verbaterra.iclhf.model import ICLHFModel
-from verbaterra.engines.vsion import simulate_block
-from verbaterra.core.metrics import nlis, crm
+from verbaterra.engines import run_engine
+from verbaterra.metrics import crm, nlis
+from verbaterra.models import create_model
 
-def main():
-    df = simulate_block(n=120, seed=7)
-    df["NLIS"] = nlis(df); df["CRM"] = crm(df)
-    print(ICLHFModel().fit(df).summary())
+
+def main() -> None:
+    df, _ = run_engine("vsion", seed=7)
+    df["NLIS"] = nlis(df)
+    df["CRM"] = crm(df)
+    model = create_model("iclhf").fit(df)
+    print(model.summary())
+
 
 if __name__ == "__main__":
     main()

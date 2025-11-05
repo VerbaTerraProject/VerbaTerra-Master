@@ -1,0 +1,11 @@
+n: 240
+ritual_mean: 52.0
+ritual_std: 9.0
+trade_mean: 48.0
+trade_std: 14.0
+symbolism_mean: 55.0
+symbolism_std: 11.0
+hierarchy_mean: 47.0
+hierarchy_std: 16.0
+lexical_bias: 18.0
+syntax_bias: 14.0
