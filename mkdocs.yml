@@ -1,37 +1,8 @@
-site_name: VerbaTerra — Simulation Lab Docs
-site_description: Cultural–linguistic simulation ecosystem (ICLHF • CALR • vSION • NΦRA • Analyst • Nexus)
-site_url: https://verbaterraproject.github.io/VerbaTerra-Master/
-repo_url: https://github.com/VerbaTerraProject/VerbaTerra-Master
-repo_name: VerbaTerra-Master
-theme:
-  name: material
-  features:
-    - navigation.instant
-    - navigation.sections
-    - content.code.copy
+site_name: VerbaTerra
 nav:
   - Home: index.md
-  - Overview: overview.md
-  - Methods:
-      - Overview: methods/index.md
-      - ICLHF: methods/iclhf.md
-      - CALR: methods/calr.md
-      - Metrics (NLIS & CRM): methods/metrics.md
-  - Engines:
-      - vSION Engine: engines/vsion.md
-      - NΦRA (NPHRA) Core: engines/nphra.md
-      - Analyst Module: engines/analyst.md
-      - Nexus Interface: engines/nexus.md
-  - Validation:
-      - Robustness & Directionality: validation/robustness_directionality.md
-  - Data & Reproducibility:
-      - Data Policy: data/data_policy.md
-      - Reproducibility: data/reproducibility.md
-  - API Reference: api/index.md
-  - Project:
-      - Roadmap: roadmap.md
-      - Changelog: changelog.md
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/VerbaTerraProject/VerbaTerra-Master
+  - User Manual: user-manual.md
+  - Engines: engines.md
+  - Models: models-user-guide.md
+  - Experiments: experiments.md
+  - Labs: labs.md

@@ -1,24 +1,27 @@
-# VerbaTerra Simulation Lab
+# VerbaTerra v1.0
 
-Welcome to the VerbaTerra technical documentation. This site captures the
-project vision, methodology, and API needed to reproduce the cultural–
-linguistic simulations that power the toolkit.
+VerbaTerra is a cultural–linguistic research environment that combines
+simulation engines, CALR metrics, and ICLHF predictive models into a single
+workflow. This documentation site describes how to install the toolkit,
+execute reproducible experiments, and extend the ecosystem with new labs and
+models.
 
-- Start with the [Overview](overview.md) for a conceptual tour of the research
-  program.
-- Explore the [Methods](methods/index.md) section to learn how ICLHF and CALR
-  connect rituals, trade, symbolism, and hierarchy with linguistic resilience.
-- Dive into the [Engines](engines/vsion.md) pages for implementation details of
-  the simulators and analytical modules.
-- Consult the [API Reference](api/index.md) when integrating VerbaTerra into
-  your own experiments.
+## Key capabilities
 
-The documentation is authored in Markdown and built with MkDocs. To serve it
-locally run:
+- **Simulation Engines** – vSION, CCH, and NΦRA produce synthetic datasets of
+  ritual, trade, symbolism, and hierarchy signals.
+- **Metrics** – CALR provides NLIS (Neuro-Linguistic Integration Score) and CRM
+  (Cultural Resilience Metric) for tracking cultural balance and linguistic
+  cohesion.
+- **Models** – The ICLHF model learns cultural → linguistic causation for
+  downstream forecasting, transfer, and evaluation pipelines.
+- **Command Line Tools** – Unified CLIs for running simulations, computing
+  metrics, training models, and evaluating cross-run performance.
 
-```bash
-python -m pip install -e .[docs]
-mkdocs serve
-```
+## Quick links
 
-For release automation, see the repository README and GitHub Actions workflow.
+- [User Manual](user-manual.md)
+- [Simulation Engines](engines.md)
+- [Model Guide](models-user-guide.md)
+- [Experiment Templates](experiments.md)
+- [Labs Overview](labs.md)
