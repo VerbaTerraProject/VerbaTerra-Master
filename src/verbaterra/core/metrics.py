@@ -18,7 +18,12 @@ def nlis(df: pd.DataFrame) -> pd.Series:
         if c not in df:
             raise KeyError(f"Missing column: {c}")
     ling = 0.6 * _safe_norm(df["lexical_diversity"]) + 0.4 * _safe_norm(df["syntax_complexity"])
-    cult = 0.25 * _safe_norm(df["ritual"]) + 0.25 * _safe_norm(df["trade"]) + 0.25 * _safe_norm(df["symbolism"]) + 0.25 * _safe_norm(df["hierarchy"])
+    cult = (
+        0.25 * _safe_norm(df["ritual"]) +
+        0.25 * _safe_norm(df["trade"]) +
+        0.25 * _safe_norm(df["symbolism"]) +
+        0.25 * _safe_norm(df["hierarchy"])
+    )
     return 0.7 * ling + 0.3 * cult
 
 def crm(df: pd.DataFrame) -> pd.Series:

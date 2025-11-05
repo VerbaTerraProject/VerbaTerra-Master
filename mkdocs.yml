@@ -13,21 +13,24 @@ nav:
   - Home: index.md
   - Overview: overview.md
   - Methods:
-    - ICLHF: methods/iclhf.md
-    - CALR: methods/calr.md
-    - Metrics (NLIS & CRM): methods/metrics.md
+      - Overview: methods/index.md
+      - ICLHF: methods/iclhf.md
+      - CALR: methods/calr.md
+      - Metrics (NLIS & CRM): methods/metrics.md
   - Engines:
-    - vSION Engine: engines/vsion.md
-    - NΦRA (NPHRA) Core: engines/nphra.md
-    - Analyst Module: engines/analyst.md
-    - Nexus Interface: engines/nexus.md
+      - vSION Engine: engines/vsion.md
+      - NΦRA (NPHRA) Core: engines/nphra.md
+      - Analyst Module: engines/analyst.md
+      - Nexus Interface: engines/nexus.md
   - Validation:
-    - Robustness & Directionality: validation/robustness_directionality.md
+      - Robustness & Directionality: validation/robustness_directionality.md
   - Data & Reproducibility:
-    - Data Policy: data/data_policy.md
-    - Reproducibility: data/reproducibility.md
+      - Data Policy: data/data_policy.md
+      - Reproducibility: data/reproducibility.md
   - API Reference: api/index.md
-  - Changelog: changelog.md
+  - Project:
+      - Roadmap: roadmap.md
+      - Changelog: changelog.md
 extra:
   social:
     - icon: fontawesome/brands/github

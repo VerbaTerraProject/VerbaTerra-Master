@@ -17,5 +17,15 @@ dependencies = [
   "networkx>=3.2"
 ]
 
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+docs = [
+  "mkdocs>=1.5",
+  "mkdocs-material>=9.5"
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
