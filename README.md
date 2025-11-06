@@ -1,55 +1,92 @@
-# VerbaTerra
+# VerbaTerra Lab
 
-VerbaTerra is a production-ready cultural–linguistic simulation lab. It ships with configurable engines, resilience metrics, and regression baselines so you can study how ritual, trade, symbolism, and hierarchy co-evolve with language.
+VerbaTerra Lab is a client-only exploration space for cultural, linguistic, and educational scenarios. The monorepo contains four interactive engines and a shared hub that can be deployed as static assets on Netlify, GitHub Pages, or embedded inside Google Sites.
 
-[![CI](https://github.com/VerbaTerraProject/VerbaTerra-Master/actions/workflows/ci.yml/badge.svg)](https://github.com/VerbaTerraProject/VerbaTerra-Master/actions/workflows/ci.yml)
-[![Docs](https://img.shields.io/badge/docs-mkdocs--material-blueviolet)](https://verbaterraproject.github.io/VerbaTerra-Master/)
+## Repository Layout
 
-## Installation
+```
+verbaterra-lab/
+  LICENSE
+  README.md
+  netlify.toml
+  package.json
+  pnpm-lock.yaml
+  apps/
+    hub/
+    vsion/
+    nora/
+    analyst/
+    nexus/
+  data/
+  docs/
+    mkdocs.yml
+    docs/
+  .github/workflows/
+```
+
+### Engines
+
+| Module | Description |
+| --- | --- |
+| **Hub** | Central landing portal with navigation cards, embed snippets, and launchers for each engine. |
+| **vSION** | Agent-based civilization simulation that lets you tune ritual, trade, symbolism, and hierarchy while visualising outcomes. |
+| **NΦRA** | Symbolic grammar playground that transforms seed lexicons using cultural weightings and exports CSV snapshots. |
+| **Analyst** | Metrics explorer that ingests CSV data, infers schema, and computes demonstrative NLIS and CRM indicators with charts. |
+| **Nexus** | Educator and researcher control panel with guidance, preset launch links, and an embed generator. |
+
+### Quick Start
+
+1. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+2. Run an individual app during development, for example the hub:
+   ```bash
+   pnpm dev:hub
+   ```
+   Each engine has a matching `dev:<name>` command.
+3. Build every app for static deployment:
+   ```bash
+   pnpm build
+   ```
+4. Run unit tests:
+   ```bash
+   pnpm test
+   ```
+
+### Deployment
+
+#### Netlify
+
+1. Connect the repository to Netlify.
+2. Use build command `pnpm i && pnpm build`.
+3. Set publish directory to `apps/hub/dist`.
+4. The provided `netlify.toml` configures friendly redirects to each engine distribution folder.
+
+#### GitHub Pages
+
+The GitHub workflow `.github/workflows/pages.yml` builds the project and publishes the hub distribution to the `gh-pages` branch automatically. Enable GitHub Pages for the repository and point it to the `gh-pages` branch.
+
+### Google Sites Embedding
+
+1. Build the project and deploy to Netlify or GitHub Pages.
+2. In Google Sites, choose **Insert → Embed → By URL**.
+3. Paste one of the engine URLs:
+   * `https://YOUR_DOMAIN/apps/vsion/dist/index.html`
+   * `https://YOUR_DOMAIN/apps/nora/dist/index.html`
+   * `https://YOUR_DOMAIN/apps/analyst/dist/index.html`
+   * `https://YOUR_DOMAIN/apps/nexus/dist/index.html`
+4. Adjust iframe size (recommended width 100%, height 700–800px).
+
+### Documentation
+
+MkDocs documentation lives in `docs/` and includes engine overviews, metrics references, and embed guidance. Serve locally with:
 
 ```bash
-git clone https://github.com/VerbaTerraProject/verbaterra.git
-cd verbaterra
-python -m pip install -e .[dev]
+cd docs
+mkdocs serve
 ```
 
-The `dev` extra installs pytest, ruff, black, and mypy for local validation.
+### License
 
-## 60-second quickstart
-
-```python
-from verbaterra import VSIONSimulator, ICLHFModel, compute_nlis
-
-sim = VSIONSimulator(seed=7)
-df = sim.run()
-df["NLIS"] = compute_nlis(df)
-model = ICLHFModel().fit(df)
-print(model.summary())
-```
-
-Or run the scripted example:
-
-```bash
-python run_quickstart.py
-```
-
-## Project layout
-
-```
-src/verbaterra/    # engines, metrics, models, dataio, hypotheses, utilities
-examples/          # CLI scripts and notebooks
-tests/             # unit and integration suites
-docs/              # MkDocs Material documentation
-.github/workflows/ # CI and documentation pipelines
-data/              # dictionary and sample datasets
-```
-
-## Development workflow
-
-1. Install dependencies: `python -m pip install -e .[dev,docs]`
-2. Lint & format: `ruff check .` and `black --check .`
-3. Type-check: `mypy .`
-4. Run tests: `pytest`
-5. Build docs: `mkdocs build`
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for pull request guidelines and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community expectations.
+Released under the [MIT License](LICENSE).

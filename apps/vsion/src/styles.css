@@ -1,0 +1,100 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light dark;
+  --bg: #0b1026;
+  --panel: rgba(13, 21, 48, 0.9);
+  --accent: #7f5af0;
+  --accent-soft: rgba(127, 90, 240, 0.18);
+  --text: #f7f7fc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #141b3a 0%, #090b1a 65%, #030410 100%);
+  color: var(--text);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.controls {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.controls h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.slider-group input[type='range'] {
+  width: 100%;
+}
+
+button.share {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.share:hover,
+button.share:focus {
+  background: #6241c9;
+}
+
+.visuals {
+  display: grid;
+  grid-template-rows: 1fr 260px;
+  gap: 1rem;
+}
+
+#network {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+}
+
+#chart {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+@media (max-width: 960px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+
+  .visuals {
+    grid-template-rows: 320px 260px;
+  }
+}

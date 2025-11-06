@@ -1,0 +1,107 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #121422;
+  color: #f2f2f5;
+  color-scheme: light dark;
+  --panel: rgba(34, 38, 65, 0.86);
+  --accent: #ff6b6b;
+  --accent-dark: #d64545;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem 4rem;
+}
+
+#app {
+  width: min(1100px, 100%);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  padding: 1.75rem;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 1rem;
+  border-radius: 14px;
+  border: none;
+  resize: vertical;
+  font-family: 'Fira Code', monospace;
+  background: rgba(0, 0, 0, 0.35);
+  color: inherit;
+}
+
+.controls {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+thead {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+th,
+td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0.4rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+button:hover,
+button:focus {
+  background: var(--accent-dark);
+}
+
+button.secondary:hover,
+button.secondary:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
