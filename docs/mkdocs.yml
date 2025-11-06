@@ -1,0 +1,19 @@
+site_name: VerbaTerra Lab Docs
+site_url: https://example.com
+repo_url: https://github.com/verbaterra/verbaterra-lab
+nav:
+  - Home: docs/index.md
+  - Getting Started: docs/getting-started.md
+  - Engines: docs/engines.md
+  - Metrics: docs/metrics.md
+  - Google Sites Embeds: docs/embeds.md
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list

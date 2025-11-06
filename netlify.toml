@@ -1,0 +1,23 @@
+[build]
+  command = "pnpm i && pnpm build"
+  publish = "apps/hub/dist"
+
+[[redirects]]
+  from = "/vsion"
+  to = "/apps/vsion/dist/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nora"
+  to = "/apps/nora/dist/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/analyst"
+  to = "/apps/analyst/dist/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nexus"
+  to = "/apps/nexus/dist/index.html"
+  status = 200
